@@ -2,12 +2,17 @@
 {
     internal class MenuManager
     {
+        // Divisore
+        public static void Divider()
+        {
+            Console.WriteLine("\n===============================================================================================================");
+        }
         // Metodo per visualizzare menu
         public static void DisplayMenu()
         {
             string[] menu = { "Inserimento prodotto", "Visualizza prodotti", "Modifica prodotto", "Elimina prodotto" };
-            Console.WriteLine("===============================================================================================================");
-            Console.WriteLine("Menu:");
+            Divider();
+            Console.WriteLine("\nMenu:");
             for (int i = 0; i < menu.Length; i++)
             {
                 Console.WriteLine($"{i + 1}. {menu[i]}");
@@ -30,7 +35,9 @@
         // Metodo per l'inserimento di un nuovo prodotto
         public static void InsertProduct()
         {
-            Console.Write("Inserisci il nome del prodotto: ");
+            Divider();
+            Console.WriteLine("\n-- Inserimento prodotto --");
+            Console.Write("\nInserisci il nome del prodotto: ");
             string name = Console.ReadLine();
 
             Console.Write("Inserisci la descrizione del prodotto: ");
@@ -56,7 +63,8 @@
         // Metodo per visualizzare l'intera lista dei prodotti
         public static void DisplayProductList()
         {
-            Console.WriteLine("\nVisualizzazione lista dei prodotti:");
+            Divider();
+            Console.WriteLine("\n-- Visualizzazione lista dei prodotti --");
             if (Program.products.Count == 0)
             {
                 Console.WriteLine("Nessun prodotto presente.");
@@ -72,6 +80,7 @@
         // Metodo per modificare un prodotto esistente
         public static void ModifyProduct()
         {
+            Divider();
             Console.WriteLine("\n-- Modifica prodotto --");
             if (Program.products.Count == 0)
             {
@@ -129,6 +138,7 @@
         // Metodo per eliminare un prodotto esistente
         public static void DeleteProduct()
         {
+            Divider();
             Console.WriteLine("\n-- Elimina prodotto --");
             if (Program.products.Count == 0)
             {
